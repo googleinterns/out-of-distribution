@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Exclude Spelling" pattern="file:requirements.txt||file:.gitignore||file:.gitattributes" />
+</component>

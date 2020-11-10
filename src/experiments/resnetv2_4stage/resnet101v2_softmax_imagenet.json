@@ -1,0 +1,31 @@
+{
+  "model": {
+    "architecture": "ResNet101V2_Softmax",
+    "n_classes": 1000,
+    "device": "cuda:1"
+  },
+  "data": {
+    "dataset": "imagenet",
+    "train_batch_size": 64,
+    "infer_batch_size": 512,
+    "n_workers": 16
+  },
+  "optimizer": {
+    "n_epochs": 120,
+    "learning_rate": 2.5e-2,
+    "momentum": 0.9,
+    "nesterov": false,
+    "weight_decay": 1e-4
+  },
+  "scheduler": {
+    "milestones": [30, 60],
+    "gamma": 0.1
+  },
+  "out_dirpath": "results/resnet101v2_softmax_imagenet",
+  "load_checkpoint": null,
+  "debug": {
+    "detect_anomaly": false,
+    "visualize_inputs": 10,
+    "visualize_filters": "conv1.weight"
+  }
+}

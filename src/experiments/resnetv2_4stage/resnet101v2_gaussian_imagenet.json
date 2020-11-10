@@ -1,0 +1,32 @@
+{
+  "model": {
+    "architecture": "ResNet101V2_Gaussian",
+    "radius": 10.0,
+    "n_classes": 1000,
+    "device": "cuda:2"
+  },
+  "data": {
+    "dataset": "imagenet",
+    "train_batch_size": 64,
+    "infer_batch_size": 512,
+    "n_workers": 16
+  },
+  "optimizer": {
+    "n_epochs": 120,
+    "learning_rate": 2.5e-3,
+    "momentum": 0.9,
+    "nesterov": false,
+    "weight_decay": 1e-6
+  },
+  "scheduler": {
+    "milestones": [30, 60],
+    "gamma": 0.1
+  },
+  "out_dirpath": "results/resnet101v2_gaussian_imagenet",
+  "load_checkpoint": null,
+  "debug": {
+    "detect_anomaly": false,
+    "visualize_inputs": 10,
+    "visualize_filters": "conv1.weight"
+  }
+}
