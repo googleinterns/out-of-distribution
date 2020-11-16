@@ -1,0 +1,27 @@
+The batch size is 1:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/gen_net_opts_model_type2.m#L19
+
+Do augmentation before cropping:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/my_get_batch_ds_info.m#L21
+
+The data augmentation pipeline is a random scale followed by a random horizontal flip:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/batch_do_data_augmentation.m#L75
+
+The random crop is square. The crop size is the shortest side of the image, up to 400:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/batch_do_data_crop.m#L30
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/demo_refinenet_train.m#L165
+
+The learning rate is 5e-4:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/demo_refinenet_train.m#L144
+
+The model is trained for 70 epochs before reducing the learning rate:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/demo_refinenet_train.m#L155
+
+The learning rate is reduced by a factor of 10:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/demo_refinenet_train.m#L156
+
+The momentum is 0.9:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/gen_net_opts_model_type2.m#L96
+
+The weight decay is 5e-4:
+- https://github.com/guosheng/refinenet/blob/3d09d311f447b3592f8f820e52629ddcdd10c539/main/gen_net_opts_model_type2.m#L95

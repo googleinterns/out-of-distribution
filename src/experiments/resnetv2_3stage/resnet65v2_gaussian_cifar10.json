@@ -1,0 +1,32 @@
+{
+  "model": {
+    "architecture": "ResNet65V2_Gaussian",
+    "radius": 10.0,
+    "n_classes": 10,
+    "device": "cuda:0"
+  },
+  "data": {
+    "dataset": "cifar10",
+    "train_batch_size": 128,
+    "infer_batch_size": 2048,
+    "n_workers": 16
+  },
+  "optimizer": {
+    "n_epochs": 200,
+    "learning_rate": 0.01,
+    "momentum": 0.9,
+    "nesterov": false,
+    "weight_decay": 1e-4
+  },
+  "scheduler": {
+    "milestones": [100, 150],
+    "gamma": 0.1
+  },
+  "out_dirpath": "results/resnet65v2_gaussian_cifar10",
+  "load_checkpoint": null,
+  "debug": {
+    "detect_anomaly": false,
+    "visualize_inputs": 10,
+    "visualize_filters": "conv1.weight"
+  }
+}
